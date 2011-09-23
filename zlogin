@@ -24,7 +24,7 @@ export BLOCKSIZE=1024
 PATH=${HOME}/local/node/bin:${PATH}
 export NODE_PATH=${HOME}/local/node:${HOME}/local/node/lib/node_modules
 
-# Override rediculous default settings on some Linux distributions:
+# Override ridiculous default settings on some Linux distributions:
 # sort things correctly
 export LC_COLLATE=C
 # we want less to be raw less.  I hate automagic!
