@@ -9,7 +9,7 @@ fi
 
 PATH=${HOME}/bin:${HOME}/local/bin:/usr/gnu/bin:/usr/sfw/bin:/usr/local/bin:/usr/X11R6/bin:/usr/openwin/bin:/usr/local/mysql/bin:/usr/local/netpbm/bin:/usr/xpg4/bin:/usr/ccs/bin:/usr/bin:/bin:/usr/etc:/etc:/sbin:/usr/sbin:/usr/ucb
 
-export MANPATH=${HOME}/bin/man:${HOME}/local/man:/usr/gnu/man:/usr/sfw/man:/usr/local/netpbm/man:/usr/openwin/man:/usr/X11R6/man:/usr/local/man:/usr/xpg4/man:/usr/share/man:/usr/man:/usr/ccs/man:/usr/ucb/man
+export MANPATH=${HOME}/bin/man:${HOME}/local/man:/usr/gnu/man:/usr/sfw/man:/usr/local/netpbm/man:/usr/openwin/man:/usr/X11R6/man:/usr/local/man:/usr/local/share/man:/usr/xpg4/man:/usr/share/man:/usr/man:/usr/ccs/man:/usr/ucb/man
 
 export EDITOR=`which vi`
 export PAGER=`which less`
