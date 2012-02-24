@@ -24,6 +24,10 @@ export BLOCKSIZE=1024
 PATH=${HOME}/local/node/bin:${PATH}
 export NODE_PATH=${HOME}/local/node:${HOME}/local/node/lib/node_modules
 
+# golang.org
+PATH=${HOME}/go:${PATH}
+export GOPATH=${HOME}/go
+
 # Override ridiculous default settings on some Linux distributions:
 # sort things correctly
 export LC_COLLATE=C
