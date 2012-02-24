@@ -26,6 +26,9 @@ unset LESS
 unset MAILCHECK
 unset HISTFILE
 HISTSIZE=1000
+# To enable HISTFILE, you must set HISTFILE as well as reset SAVEHIST.
+#HISTFILE=${HOME}/.zhistory
+SAVEHIST=10000
 DIRSTACKSIZE=30
 
 setopt \
@@ -34,12 +37,10 @@ setopt \
   chaselinks extendedglob hashcmds hashdirs hashlistall \
   extendedhistory longlistjobs nobadpattern nobeep \
   noflowcontrol nohup nonomatch pushdignoredups pushdminus \
-  pushdsilent pushdtohome rcquotes rmstarsilent shwordsplit
-
-setopt nobgnice
+  pushdsilent pushdtohome rcquotes rmstarsilent shwordsplit \
+  incappendhistory nobgnice
 
 unsetopt \
-  appendhistory \
   allexport noclobber notify autocd autonamedirs autoparamkeys \
   autoresume braceccl completealiases completeinword \
   correct correctall cshjunkiehistory cshjunkieloops \
