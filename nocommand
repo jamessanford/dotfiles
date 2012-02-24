@@ -1,0 +1,45 @@
+#!/usr/bin/python
+
+# A simpler version of command-not-found.
+# Show which packages might provide a given command name.
+#
+# Examples:
+#   nocommand bash
+#   nocommand less
+#   nocommand iostat vmstat
+
+import gettext
+import locale
+import sys
+try:
+  import CommandNotFound.CommandNotFound
+except ImportError:
+  sys.stderr.write("You need to install 'command-not-found' to use this.\n\n")
+  raise
+
+def main(args):
+  if len(args) < 2:
+    sys.stderr.write('usage: nocommand <command_name> [<additional_command>]\n')
+    sys.exit(1)  # bail out
+
+  exit_code = 0
+  cnflib = CommandNotFound.CommandNotFound()
+
+  for command in sys.argv[1:]:
+    packages = cnflib.getPackages(command)
+    # Alternative to getPackages:
+    #   cnflib.advise(command, False)
+    if packages:
+      for name, repo in packages:
+        sys.stdout.write(" Command '%s' in package '%s' (%s)\n" %
+                         (command, name, repo))
+    else:
+      # No command 'psqlx' found, did you mean:
+      #  Command 'psql' from package 'postgresql-client-common' (main)
+      cnflib.print_spelling_suggestion(command)
+      exit_code = 1
+
+  sys.exit(exit_code)
+
+if __name__ == '__main__':
+  main(sys.argv)
