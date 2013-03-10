@@ -55,13 +55,13 @@ unsetopt \
 
 bindkey -v
 
-bindkey [A up-line-or-history
-bindkey [B down-line-or-history
+bindkey '\e[A' up-line-or-history
+bindkey '\e[B' down-line-or-history
 
 compctl -g '*(-/)' cd
 compctl -g '*(x)' strip
 
-stty susp 
+stty susp $(print '\C-z')
 
 autoload -U edit-command-line
 zle -N edit-command-line
