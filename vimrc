@@ -26,7 +26,7 @@ nnoremap <F3> :set nu!<bar>set nu?<CR>
 nnoremap <silent> <F7> :if exists("g:syntax_on")<bar>syntax off<bar>else<bar>syntax enable<bar>endif<CR>
 
 " turn off 'insert what was last inserted' key, as I hit it by accident.
-nnoremap <C-A> <Nop>
+noremap! <C-A> <Nop>
 
 " ctermfg=black ctermbg=magenta
 hi Search term=reverse ctermfg=yellow ctermbg=black guibg=Yellow
