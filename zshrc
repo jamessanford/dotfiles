@@ -1,4 +1,4 @@
-# 20110813 jsanford
+# jsanford
 #  master on corner: nadine tepin corner nuevo camel lilas eifel shadows
 
 cdpath=(.)
@@ -58,11 +58,11 @@ bindkey -v
 bindkey '\e[A' up-line-or-history
 bindkey '\e[B' down-line-or-history
 
-compctl -g '*(-/)' cd
-compctl -g '*(x)' strip
-
 stty susp $(print '\C-z')
 
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
+
+autoload -U compinit
+compinit
