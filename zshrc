@@ -33,7 +33,7 @@ DIRSTACKSIZE=30
 
 setopt \
   zle magicequalsubst monitor alwayslastprompt alwaystoend \
-  autopushd autolist automenu autoremoveslash cdablevars \
+  autopushd autolist automenu autoremoveslash \
   chaselinks extendedglob hashcmds hashdirs hashlistall \
   extendedhistory longlistjobs nobadpattern nobeep \
   noflowcontrol nohup nonomatch pushdignoredups pushdminus \
@@ -42,7 +42,7 @@ setopt \
 
 unsetopt \
   allexport noclobber notify autocd autonamedirs autoparamkeys \
-  autoresume braceccl completealiases completeinword \
+  autoresume braceccl cdablevars completealiases completeinword \
   correct correctall cshjunkiehistory cshjunkieloops \
   cshjunkiequotes cshnullglob globsubst \
   errexit globcomplete globdots histignorespace histignoredups \
