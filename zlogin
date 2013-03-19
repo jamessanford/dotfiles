@@ -11,8 +11,8 @@ PATH=${HOME}/bin:${HOME}/local/bin:/usr/gnu/bin:/usr/sfw/bin:/usr/local/bin:/usr
 
 export MANPATH=${HOME}/bin/man:${HOME}/local/man:/usr/gnu/man:/usr/sfw/man:/usr/local/netpbm/man:/usr/openwin/man:/usr/X11R6/man:/usr/local/man:/usr/local/share/man:/usr/xpg4/man:/usr/share/man:/usr/man:/usr/ccs/man:/usr/ucb/man
 
-export EDITOR=`which vi`
-export PAGER=`which less`
+export EDITOR=$(whence -p vim || whence -p vi)
+export PAGER=$(whence -p less)
 
 if [ -z "${TERM}" ]; then
  export TERM=vt100
