@@ -23,6 +23,7 @@ filetype off
 " maybe a way to run "nohl" instead
 nnoremap <F2> :set hls!<bar>set hls?<CR>
 nnoremap <F3> :set nu!<bar>set nu?<CR>
+nnoremap <F5> :set invrelativenumber<CR>
 nnoremap <silent> <F7> :if exists("g:syntax_on")<bar>syntax off<bar>else<bar>syntax enable<bar>endif<CR>
 
 " turn off 'insert what was last inserted' key, as I hit it by accident.
