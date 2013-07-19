@@ -11,6 +11,7 @@
 import gettext
 import locale
 import sys
+sys.path.append('/usr/share/command-not-found')
 try:
   import CommandNotFound.CommandNotFound
 except ImportError:
