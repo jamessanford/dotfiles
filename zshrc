@@ -57,6 +57,8 @@ bindkey -v
 
 bindkey '\e[A' up-line-or-history
 bindkey '\e[B' down-line-or-history
+# default is vi-backward-kill-word, but this appears to be a-z0-9 words.
+bindkey '^W' backward-kill-word
 
 stty susp $(print '\C-z')
 
