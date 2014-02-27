@@ -27,6 +27,8 @@ export NODE_PATH=${HOME}/local/node:${HOME}/local/node/lib/node_modules
 # golang.org
 PATH=${HOME}/go/bin:${PATH}
 export GOPATH=${HOME}/golocal
+# if golang binary distribution is in ~/go, set this:
+#export GOROOT=${HOME}/go
 
 # Override ridiculous default settings on some Linux distributions:
 # sort things correctly
