@@ -20,6 +20,11 @@ fi
 
 export BLOCKSIZE=1024
 
+# osx android-sdk
+if [ "$(uname -s 2>/dev/null)" = "Darwin" ]; then
+  PATH=${PATH}:/Volumes/android/android-sdk/platform-tools:/Volumes/android/android-sdk/tools
+fi
+
 # node.js
 PATH=${HOME}/local/node/bin:${PATH}
 export NODE_PATH=${HOME}/local/node:${HOME}/local/node/lib/node_modules
