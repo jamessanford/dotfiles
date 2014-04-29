@@ -62,6 +62,8 @@ bindkey '^W' backward-kill-word
 
 stty susp $(print '\C-z')
 
+btih(){local _h;for _h in "$@"; do echo "magnet:?xt=urn:btih:${_h}"; done}
+
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
