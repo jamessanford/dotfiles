@@ -70,3 +70,6 @@ bindkey -M vicmd v edit-command-line
 
 autoload -U compinit
 compinit
+
+# Try menu completion instead of a list?  I think I like it.
+zstyle ':completion:*' menu select
