@@ -1,3 +1,5 @@
 [user]
-        email = jsanfordgit@froop.com
-        name = James Sanford
+	email = jsanfordgit@froop.com
+	name = James Sanford
+[pull]
+	rebase = true
