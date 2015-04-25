@@ -12,6 +12,10 @@ alias trn='trn -q'
 # What's this, I want to see some color?
 alias grep='grep --color=auto'
 
+# OSX plist
+# TODO: autocomplete from ~/Library/Preferences/
+plshow(){local _f;for _f in "$@"; do <"${_f}" plutil -convert xml1 - -o -; done}
+
 #alias openwin='eval `ssh-agent -s`;openwin -dev /dev/fbs/ffb0 defclass TrueColor defdepth 24 -ar1 200 -ar2 30'
 
 PROMPT='%m%# '
