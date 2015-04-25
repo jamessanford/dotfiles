@@ -15,7 +15,8 @@ sys.path.append('/usr/share/command-not-found')
 try:
   import CommandNotFound.CommandNotFound
 except ImportError:
-  sys.stderr.write("You need to install 'command-not-found' to use this.\n\n")
+  sys.stderr.write("You need to install 'command-not-found' and "
+                   "'python-commandnotfound' to use this.\n\n")
   raise
 
 def main(args):
