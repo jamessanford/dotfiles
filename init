@@ -1,0 +1,49 @@
+#!/bin/bash -e
+#
+# Create symlinks in $HOME for dotfiles.
+#
+# ghetto style.  probably buggy.  do not run this.
+#
+# this must be first:
+DOTFILES="$(dirname ${_})"
+
+# remove trailing /.
+DOTFILES="${DOTFILES%/.}"
+
+cd "${DOTFILES}" || (echo "cannot cd to ${DOTFILES}"; exit 1)
+
+# do not symlink these filenames
+IGNORE="(README|init|nocommand)"
+
+if [ -z "${HOME}" ] || [ ! -d "${HOME}" ]; then
+  echo 'invalid $HOME'
+  exit 1
+fi
+
+DO=
+# Any args?  Only show what we would do, do not actually do it.
+if [ $# -gt 0 ]; then
+  DO=echo
+fi
+
+for file in *; do
+  if ! (echo "${file}" | egrep -x -q "${IGNORE}") && [ -f "${file}" ]; then
+    dest="${HOME}/.${file}"
+
+    # Skip and warn if there is something there already.
+    if [ -e "${dest}" ] && [ ! -h "${dest}" ]; then
+      echo skipping "${dest}"
+      continue
+    fi
+
+    # Remove existing old symlinks.
+    if [ -e "${dest}" ] && [ -h "${dest}" ]; then
+      ${DO} rm -f "${dest}"
+    fi
+
+    # Create the new symlink.
+    ${DO} ln -s "${DOTFILES#${HOME}/}/${file}" "${dest}"
+  fi
+done
+
+echo DONE
