@@ -3,6 +3,8 @@
 
 cdpath=(.)
 
+fpath=(~/.zsh/functions $fpath)
+
 umask 077
 
 alias ls='ls -F'
