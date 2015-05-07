@@ -18,6 +18,9 @@ alias grep='grep --color=auto'
 # TODO: autocomplete from ~/Library/Preferences/
 plshow(){local _f;for _f in "$@"; do <"${_f}" plutil -convert xml1 - -o -; done}
 
+# OSX airport -I is nice
+alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
+
 #alias openwin='eval `ssh-agent -s`;openwin -dev /dev/fbs/ffb0 defclass TrueColor defdepth 24 -ar1 200 -ar2 30'
 
 PROMPT='%m%# '
