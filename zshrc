@@ -21,6 +21,9 @@ plshow(){local _f;for _f in "$@"; do <"${_f}" plutil -convert xml1 - -o -; done}
 # OSX airport -I is nice
 alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
 
+# OSX battery status; -v for more info
+battery(){local _t=ps; if [ $# -gt 0 ]; then _t=rawbatt; fi; pmset -g "${_t}"}
+
 #alias openwin='eval `ssh-agent -s`;openwin -dev /dev/fbs/ffb0 defclass TrueColor defdepth 24 -ar1 200 -ar2 30'
 
 PROMPT='%m%# '
@@ -72,6 +75,9 @@ bindkey '^W' backward-kill-word
 stty susp $(print '\C-z')
 
 btih(){local _h;for _h in "$@"; do echo "magnet:?xt=urn:btih:${_h}"; done}
+
+# Show the full pathname to a file, given a relative file. Must be a better way?
+fullpath(){local _f;for _f in "$@"; do echo ${_f:a}; done}
 
 autoload -U edit-command-line
 zle -N edit-command-line
