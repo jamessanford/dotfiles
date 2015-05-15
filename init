@@ -12,6 +12,12 @@ DOTFILES="${DOTFILES%/.}"
 
 cd "${DOTFILES}" || (echo "cannot cd to ${DOTFILES}"; exit 1)
 
+if [ "${DOTFILES}" = "." ]; then
+  # TODO: workaround...sigh
+  echo "ERROR, '$DOTFILES' was '.'.  try running this with a full pathname."
+  exit 1
+fi
+
 # do not symlink these filenames
 IGNORE="(README|init|nocommand)"
 
@@ -46,4 +52,4 @@ for file in *; do
   fi
 done
 
-echo DONE
+${DO} echo DONE
