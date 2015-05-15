@@ -9,6 +9,7 @@ set undolevels=5000
 set nomodeline
 set cpo+=v$
 
+set bg=light
 " use ':syntax enable' to enable
 syntax off
 "set syntax=OFF
