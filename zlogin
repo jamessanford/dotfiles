@@ -30,7 +30,7 @@ PATH=${HOME}/local/node/bin:${PATH}
 export NODE_PATH=${HOME}/local/node:${HOME}/local/node/lib/node_modules
 
 # golang.org
-PATH=${HOME}/go/bin:${PATH}
+PATH=${HOME}/go/bin:${HOME}/golocal/bin:${PATH}
 export GOPATH=${HOME}/golocal
 # if golang binary distribution is in ~/go, set this:
 #export GOROOT=${HOME}/go
