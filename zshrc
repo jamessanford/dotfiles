@@ -99,3 +99,6 @@ compinit
 
 # Try menu completion instead of a list?  I think I like it.
 zstyle ':completion:*' menu select
+
+# python work
+whence -p virtualenvwrapper_lazy.sh >/dev/null && source =virtualenvwrapper_lazy.sh
