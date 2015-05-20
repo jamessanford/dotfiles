@@ -1,7 +1,7 @@
 # 20110813 jsanford
 #  master on corner: nadine tepin corner nuevo camel lilas eifel shadows
 
-if [ "${OSTYPE}" != "cygwin" ]; then
+if [ "${OSTYPE}" != "cygwin" ] && [ -z "${ZSHRC_CALLING}" ]; then
  uptime
  mesg y
 # stty dsusp undef
@@ -42,3 +42,8 @@ export LC_COLLATE=C
 unset LESSOPEN
 # no less history file, it writes every time you read a file with less.
 export LESSHISTFILE=-
+
+# TODO: Consider using /etc/issue
+_locale_config=/etc/profile.d/locale.sh
+test -f ${_locale_config} && source ${_locale_config}
+unset _locale_config
