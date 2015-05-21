@@ -3,6 +3,7 @@ let loaded_matchparen = 1
 " DoMatchParen
 
 set hlsearch
+set noincsearch
 set ruler
 set history=5000
 set undolevels=5000
