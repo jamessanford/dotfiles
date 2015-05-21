@@ -10,9 +10,6 @@ set nomodeline
 set cpo+=v$
 
 set bg=light
-" use ':syntax enable' to enable
-syntax off
-"set syntax=OFF
 
 " http://vimhelp.appspot.com/filetype.txt.html#filetypes
 " (plugin, indent, plugin indent)
@@ -32,3 +29,11 @@ noremap! <C-A> <Nop>
 
 " ctermfg=black ctermbg=magenta
 hi Search term=reverse ctermfg=yellow ctermbg=black guibg=Yellow
+
+" use ':syntax enable' to enable
+if exists("vimpager")
+  syntax enable
+else
+  syntax off
+endif
+"set syntax=OFF
