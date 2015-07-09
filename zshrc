@@ -100,6 +100,9 @@ bindkey -M vicmd v edit-command-line
 autoload -U compinit
 compinit
 
+# OSX disable bad completions
+compdef -d open
+
 # Try menu completion instead of a list?  I think I like it.
 zstyle ':completion:*' menu select
 
