@@ -35,6 +35,9 @@ export GOPATH=${HOME}/golocal
 # if golang binary distribution is in ~/go, set this:
 #export GOROOT=${HOME}/go
 
+# local binaries take precedence
+PATH=${HOME}/bin:${PATH}
+
 # Override ridiculous default settings on some Linux distributions:
 # sort things correctly
 export LC_COLLATE=C
