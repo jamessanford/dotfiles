@@ -1,0 +1,4 @@
+#!/bin/sh -x
+go get -u github.com/google/codesearch/cmd/...
+go get -u github.com/golang/lint/golint
+go get -u github.com/tobert/pcstat/pcstat
