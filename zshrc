@@ -108,3 +108,13 @@ zstyle ':completion:*' menu select
 
 # python work
 whence -p virtualenvwrapper_lazy.sh >/dev/null && source =virtualenvwrapper_lazy.sh
+
+# machine readable current git branch
+alias git-current-branch='git rev-parse --abbrev-ref HEAD'
+
+# alternate cindex/csearch locations
+alias playindex="CSEARCHINDEX=~/.csearch/play cindex"
+alias playsearch="CSEARCHINDEX=~/.csearch/play csearch"
+
+alias goindex="CSEARCHINDEX=~/.csearch/go cindex"
+alias gosearch="CSEARCHINDEX=~/.csearch/go csearch"
