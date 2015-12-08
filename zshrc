@@ -112,9 +112,13 @@ whence -p virtualenvwrapper_lazy.sh >/dev/null && source =virtualenvwrapper_lazy
 # machine readable current git branch
 alias git-current-branch='git rev-parse --abbrev-ref HEAD'
 
+cfile(){local _f;for _f in "$@"; do csearch -l -f "${_f}" .; done}
+
 # alternate cindex/csearch locations
 alias playindex="CSEARCHINDEX=~/.csearch/play cindex"
 alias playsearch="CSEARCHINDEX=~/.csearch/play csearch"
+alias playfile="CSEARCHINDEX=~/.csearch/play cfile"
 
 alias goindex="CSEARCHINDEX=~/.csearch/go cindex"
 alias gosearch="CSEARCHINDEX=~/.csearch/go csearch"
+alias gofile="CSEARCHINDEX=~/.csearch/go cfile"
