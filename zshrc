@@ -101,6 +101,8 @@ autoload -U compinit
 compinit
 
 # OSX disable bad completions
+compdef -d du
+compdef -d hdiutil
 compdef -d open
 
 # Try menu completion instead of a list?  I think I like it.
