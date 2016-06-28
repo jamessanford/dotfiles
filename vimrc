@@ -2,6 +2,9 @@ let loaded_matchparen = 1
 " NoMatchParen
 " DoMatchParen
 
+" use gpg1 on archlinux
+let g:GPGExecutable = "gpg1 --trust-model always"
+
 set hlsearch
 set noincsearch
 set ruler
