@@ -21,6 +21,8 @@ alias trn='trn -q'
 
 # What's this, I want to see some color?
 alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
 
 # Lame.
 alias vi=$(whence -p vim || whence -p vi)
