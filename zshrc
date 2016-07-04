@@ -124,3 +124,5 @@ alias playfile="CSEARCHINDEX=~/.csearch/play cfile"
 alias goindex="CSEARCHINDEX=~/.csearch/go cindex"
 alias gosearch="CSEARCHINDEX=~/.csearch/go csearch"
 alias gofile="CSEARCHINDEX=~/.csearch/go cfile"
+
+alias gometalinter-update='go get -u github.com/alecthomas/gometalinter && gometalinter --install --update'
