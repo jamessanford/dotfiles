@@ -115,6 +115,7 @@ whence -p virtualenvwrapper_lazy.sh >/dev/null && source =virtualenvwrapper_lazy
 
 # machine readable current git branch
 alias git-current-branch='git rev-parse --abbrev-ref HEAD'
+alias git-scrub='git branch --merged | grep -v master | xargs echo git branch -d'
 
 cfile(){local _f;for _f in "$@"; do csearch -l -f "${_f}" .; done}
 

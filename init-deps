@@ -4,5 +4,6 @@ go get -u github.com/golang/lint/golint
 go get -u github.com/tobert/pcstat/pcstat
 go get -u github.com/tomnomnom/gron
 go get -u github.com/shurcooL/markdownfmt
+go get -u github.com/ddo/fast
 # go get -u github.com/aclements/go-perf/cmd/memlat
 # go get -u github.com/fzipp/pythia
