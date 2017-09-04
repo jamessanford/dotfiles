@@ -42,14 +42,12 @@ pwrand(){LC_CTYPE=C </dev/urandom tr -dc 'A-Za-z0-9~!@#$%^[]{};:,/' | head -c ${
 
 #alias openwin='eval `ssh-agent -s`;openwin -dev /dev/fbs/ffb0 defclass TrueColor defdepth 24 -ar1 200 -ar2 30'
 
-PROMPT='%m%# '
-
-#RPROMPT=' %~'
-#export LESS=-cex3M
-
 # unset, just in case anyone has silly systemwide defaults
 unset RPROMPT
 unset LESS
+
+# non-zero exit status causes prompt prefix
+PROMPT='%(?..%K{r}[%?]%k )%m%(?.%#.!) '
 
 unset MAILCHECK
 unset HISTFILE
