@@ -5,5 +5,10 @@ go get -u github.com/tobert/pcstat/pcstat
 go get -u github.com/tomnomnom/gron
 go get -u github.com/shurcooL/markdownfmt
 go get -u github.com/ddo/fast
+go get -u github.com/alecthomas/gometalinter
+go get -u github.com/FiloSottile/gorebuild
+go get -u rsc.io/goversion
+# go get -u github.com/d4l3k/go-pry
 # go get -u github.com/aclements/go-perf/cmd/memlat
 # go get -u github.com/fzipp/pythia
+# https://github.com/chneukirchen/nq
