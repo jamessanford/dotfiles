@@ -38,7 +38,7 @@ alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Cu
 battery(){local _t=ps; if [ $# -gt 0 ]; then _t=rawbatt; fi; pmset -g "${_t}"}
 
 # see also 'pwgen -s 20 5' or 'openssl rand -base64 20'
-pwrand(){LC_CTYPE=C </dev/urandom tr -dc 'A-Za-z0-9~!@#$%^[]{};:,/' | head -c ${1:-20};echo}
+pwrand(){LC_CTYPE=C </dev/urandom tr -dc 'A-Za-z0-9!@#$%^:,._/' | head -c ${1:-20};echo}
 
 #alias openwin='eval `ssh-agent -s`;openwin -dev /dev/fbs/ffb0 defclass TrueColor defdepth 24 -ar1 200 -ar2 30'
 
