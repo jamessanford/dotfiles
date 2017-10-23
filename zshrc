@@ -133,5 +133,3 @@ go-show-deps(){go list -f '{{ join .Deps "\n" }}' "${@:-./...}"}
 go-show-imports(){go list -f '{{ join .Imports "\n" }}' "${@:-./...}"}
 
 alias gometalinter-update='go get -u github.com/alecthomas/gometalinter && gometalinter --install --update'
-
-zramstat(){grep -H --color=never . /sys/devices/virtual/block/zram*/mm_stat}
