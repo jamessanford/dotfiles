@@ -41,6 +41,8 @@ PATH=${HOME}/bin:${PATH}
 # Override ridiculous default settings on some Linux distributions:
 # sort things correctly
 export LC_COLLATE=C
+# old school date format
+export LC_TIME=C
 # we want less to be raw less.  I hate automagic!
 unset LESSOPEN
 # no less history file, it writes every time you read a file with less.
