@@ -135,5 +135,8 @@ alias gofile="CSEARCHINDEX=~/.csearch/go cfile"
 go-show-deps(){go list -f '{{ join .Deps "\n" }}' "${@:-./...}"}
 go-show-imports(){go list -f '{{ join .Imports "\n" }}' "${@:-./...}"}
 
+# see also turbostat --list
+alias turbosum='sudo turbostat --quiet --show Core,CPU,Avg_MHz,Busy%,Bzy_MHz,TSC_MHz,CorWatt,PkgWatt,RAMWatt,GFXMHz --interval 1'
+
 # Show something like 'screen -x', but for tmux (not just "tmux a")
 tmux() { if [[ $@ == "-x" ]]; then tmux list-sessions; echo ""; echo "Use tmux-new-session -t SESSION"; else command tmux "$@"; fi; }
