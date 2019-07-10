@@ -134,5 +134,3 @@ alias gofile="CSEARCHINDEX=~/.csearch/go cfile"
 # use './...' when no files given
 go-show-deps(){go list -f '{{ join .Deps "\n" }}' "${@:-./...}"}
 go-show-imports(){go list -f '{{ join .Imports "\n" }}' "${@:-./...}"}
-
-alias gometalinter-update='go get -u github.com/alecthomas/gometalinter && gometalinter --install --update'
