@@ -134,3 +134,6 @@ alias gofile="CSEARCHINDEX=~/.csearch/go cfile"
 # use './...' when no files given
 go-show-deps(){go list -f '{{ join .Deps "\n" }}' "${@:-./...}"}
 go-show-imports(){go list -f '{{ join .Imports "\n" }}' "${@:-./...}"}
+
+# Show something like 'screen -x', but for tmux (not just "tmux a")
+tmux() { if [[ $@ == "-x" ]]; then tmux list-sessions; echo ""; echo "Use tmux-new-session -t SESSION"; else command tmux "$@"; fi; }
