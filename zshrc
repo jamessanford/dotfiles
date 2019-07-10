@@ -34,6 +34,9 @@ plshow(){local _f;for _f in "$@"; do <"${_f}" plutil -convert xml1 - -o -; done}
 # OSX airport -I is nice
 alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
 
+alias airport-on='networksetup -setairportpower en0 on'
+alias airport-off='networksetup -setairportpower en0 off'
+
 # OSX battery status; -v for more info
 battery(){local _t=ps; if [ $# -gt 0 ]; then _t=rawbatt; fi; pmset -g "${_t}"}
 
