@@ -1,14 +1,17 @@
 #!/bin/sh -x
-go get -u github.com/google/codesearch/cmd/...
-go get -u github.com/golang/lint/golint
-go get -u github.com/tobert/pcstat/pcstat
-go get -u github.com/tomnomnom/gron
-go get -u github.com/shurcooL/markdownfmt
-go get -u github.com/ddo/fast
-go get -u github.com/alecthomas/gometalinter
-go get -u github.com/FiloSottile/gorebuild
-go get -u rsc.io/goversion
-# go get -u github.com/d4l3k/go-pry
-# go get -u github.com/aclements/go-perf/cmd/memlat
-# go get -u github.com/fzipp/pythia
+go get -u -x github.com/google/codesearch/cmd/...
+go get -u -x github.com/golang/lint/golint
+go get -u -x github.com/tobert/pcstat/pcstat
+go get -u -x github.com/tomnomnom/gron
+go get -u -x github.com/shurcooL/markdownfmt
+go get -u -x github.com/ddo/fast
+go get -u -x github.com/FiloSottile/gorebuild
+go get -u -x rsc.io/goversion
+go get -u -x github.com/maruel/panicparse
+go get -u -x github.com/ChimeraCoder/gojson/gojson
+# go get -u -x github.com/d4l3k/go-pry
+# go get -u -x github.com/aclements/go-perf/cmd/memlat
+# go get -u -x github.com/fzipp/pythia
 # https://github.com/chneukirchen/nq
+# https://github.com/sharkdp/bat
+go get -u -x github.com/golangci/golangci-lint/cmd/golangci-lint
