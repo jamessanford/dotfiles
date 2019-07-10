@@ -35,6 +35,9 @@ export GOPATH=${HOME}/golocal
 # if golang binary distribution is in ~/go, set this:
 #export GOROOT=${HOME}/go
 
+# rust via rustup
+test -f "${HOME}/.cargo/env" && source "${HOME}/.cargo/env"
+
 # local binaries take precedence
 PATH=${HOME}/bin:${PATH}
 
