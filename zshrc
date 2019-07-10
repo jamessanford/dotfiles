@@ -15,7 +15,7 @@ fpath=(~/.zsh/functions $fpath)
 
 umask 077
 
-alias ls='ls -F'
+alias ls='ls -NF'
 
 alias trn='trn -q'
 
