@@ -16,3 +16,4 @@ go get -u -x github.com/ChimeraCoder/gojson/gojson
 # https://github.com/chneukirchen/nq
 # https://github.com/sharkdp/bat
 go get -u -x github.com/golangci/golangci-lint/cmd/golangci-lint
+# https://github.com/monsterxx03/gospy
