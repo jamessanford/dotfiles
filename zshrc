@@ -140,5 +140,8 @@ alias godoc='go doc --all'
 # see also turbostat --list
 alias turbosum='sudo turbostat --quiet --show Core,CPU,Avg_MHz,Busy%,Bzy_MHz,TSC_MHz,CorWatt,PkgWatt,RAMWatt,GFXMHz --interval 1'
 
+# summary of extended iostat output
+iostatsum() { iostat -x 1|awk '/Device/{pf=1} /^$/{pf=0} (pf==1){print $1"\t"$2"\t"$3"\t"$8"\t"$9"\t"$NF} (pf==0)' }
+
 # Show something like 'screen -x', but for tmux (not just "tmux a")
 tmux() { if [[ $@ == "-x" ]]; then tmux list-sessions; echo ""; echo "Use tmux-new-session -t SESSION"; else command tmux "$@"; fi; }
