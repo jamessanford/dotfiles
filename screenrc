@@ -1,2 +1,2 @@
-defscrollback 100000
+defscrollback 25000
 defutf8 on
