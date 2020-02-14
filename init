@@ -19,7 +19,7 @@ if [ "${DOTFILES}" = "." ]; then
 fi
 
 # do not symlink these filenames
-IGNORE="(README|init|init-deps|nocommand)"
+IGNORE="(README|init|init-deps|nocommand|kitty.conf)"
 
 if [ -z "${HOME}" ] || [ ! -d "${HOME}" ]; then
   echo 'invalid $HOME'
