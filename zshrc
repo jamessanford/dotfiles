@@ -23,6 +23,7 @@ alias trn='trn -q'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
+alias ip='ip --color=auto'
 
 # Lame.
 alias vi=$(whence -p vim || whence -p vi)
@@ -139,6 +140,9 @@ alias godoc='go doc --all'
 
 # see also turbostat --list
 alias turbosum='sudo turbostat --quiet --show Core,CPU,Avg_MHz,Busy%,Bzy_MHz,TSC_MHz,CorWatt,PkgWatt,RAMWatt,GFXMHz --interval 1'
+
+# arch
+alias yall='yay --nocleanmenu --nodiffmenu'
 
 # summary of extended iostat output
 iostatsum() { iostat -x 1|awk '/Device/{pf=1} /^$/{pf=0} (pf==1){print $1"\t"$2"\t"$3"\t"$8"\t"$9"\t"$NF} (pf==0)' }
