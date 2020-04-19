@@ -25,3 +25,4 @@ go install github.com/mgechev/revive@latest
 # https://github.com/chneukirchen/nq
 # https://github.com/sharkdp/bat
 # https://github.com/monsterxx03/gospy
+# go get -u -x github.com/yoheimuta/protolint/cmd/protolint
