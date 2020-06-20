@@ -149,3 +149,15 @@ iostatsum() { iostat -x 1|awk '/Device/{pf=1} /^$/{pf=0} (pf==1){print $1"\t"$2"
 
 # Show something like 'screen -x', but for tmux (not just "tmux a")
 tmux() { if [[ $@ == "-x" ]]; then tmux list-sessions; echo ""; echo "Use tmux-new-session -t SESSION"; else command tmux "$@"; fi; }
+
+kubectl() {
+  unfunction kubectl
+  source <(kubectl completion zsh)
+  kubectl "$@"
+}
+# export KUBECONFIG=$(k3d get kubeconfig --name=k3s-default)
+kubeact() {
+  local _name='k3s-default'
+  if [[ $# -gt 0 ]]; then _name="$1"; fi
+  export KUBECONFIG=$(k3d get kubeconfig "${_name}")
+}
