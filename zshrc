@@ -1,14 +1,6 @@
 # jsanford
 #  master on corner: nadine tepin corner nuevo camel lilas eifel shadows
 
-# we use one-time zlogin to set up environment variables
-#   but one-time zlogin happens after the first zshrc
-#     so force it to load
-if [ -z "${ZLOGIN}" ]; then
-  ZSHRC_CALLING=1 source ~/.zlogin
-  export ZLOGIN=1
-fi
-
 cdpath=(.)
 
 fpath=(~/.zsh/functions $fpath)
