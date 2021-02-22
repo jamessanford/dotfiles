@@ -153,3 +153,7 @@ kubeact() {
   if [[ $# -gt 0 ]]; then _name="$1"; fi
   export KUBECONFIG=$(k3d get kubeconfig "${_name}")
 }
+
+# macOS kitty workarounds (alternatively, pass terminfo)
+alias ssh='TERM=xterm ssh'
+alias sudo='TERM=xterm sudo'
