@@ -1,19 +1,20 @@
 #!/bin/sh -x -e
-go get -u -x github.com/google/codesearch/cmd/...
-go get -u -x golang.org/x/lint/golint
-go get -u -x github.com/tobert/pcstat/pcstat
-go get -u -x github.com/silenceshell/hcache
-go get -u -x github.com/tomnomnom/gron
-go get -u -x github.com/shurcooL/markdownfmt
-go get -u -x github.com/ddo/fast
-go get -u -x github.com/FiloSottile/gorebuild
-go get -u -x rsc.io/goversion
-go get -u -x github.com/maruel/panicparse
-go get -u -x github.com/ChimeraCoder/gojson/gojson
-# go get -u -x github.com/d4l3k/go-pry
-# go get -u -x github.com/aclements/go-perf/cmd/memlat
-# go get -u -x github.com/fzipp/pythia
+go install github.com/google/codesearch/cmd/...@latest
+go install golang.org/x/lint/golint@latest
+go install github.com/tobert/pcstat/pcstat@latest
+go install github.com/silenceshell/hcache@latest
+go install github.com/tomnomnom/gron@latest
+go install github.com/shurcooL/markdownfmt@latest
+go install github.com/FiloSottile/gorebuild@latest
+go install rsc.io/goversion@latest
+go install github.com/maruel/panicparse@latest
+go install github.com/ChimeraCoder/gojson/gojson@latest
+go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+go install mvdan.cc/gofumpt
+go install mvdan.cc/gofumpt/gofumports
+# github.com/d4l3k/go-pry
+# github.com/aclements/go-perf/cmd/memlat
+# github.com/fzipp/pythia
 # https://github.com/chneukirchen/nq
 # https://github.com/sharkdp/bat
-go get -u -x github.com/golangci/golangci-lint/cmd/golangci-lint
 # https://github.com/monsterxx03/gospy
