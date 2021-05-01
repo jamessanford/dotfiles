@@ -50,3 +50,6 @@ export LESSHISTFILE=-
 _locale_config=/etc/profile.d/locale.sh
 test -f ${_locale_config} && source ${_locale_config}
 unset _locale_config
+
+# python poetry
+export PATH="/Users/jsanford/Library/Python/3.9/bin:$PATH"
