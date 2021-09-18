@@ -157,6 +157,3 @@ kubeact() {
 # macOS kitty workarounds (alternatively, pass terminfo)
 alias ssh='TERM=xterm ssh'
 alias sudo='TERM=xterm sudo'
-
-# archlinux yay quickmode
-alias yayq='yay --nocleanmenu --nodiffmenu'
