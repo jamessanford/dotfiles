@@ -1,6 +1,6 @@
 PATH=${HOME}/bin:${HOME}/local/bin:/usr/gnu/bin:/usr/sfw/bin:/usr/local/bin:/usr/X11R6/bin:/usr/openwin/bin:/usr/local/mysql/bin:/usr/local/netpbm/bin:/usr/bin/vendor_perl:/usr/xpg4/bin:/usr/ccs/bin:/usr/bin:/bin:/usr/etc:/etc:/usr/local/sbin:/sbin:/usr/sbin:/usr/ucb
 
-export MANPATH=${HOME}/bin/man:${HOME}/local/man:/usr/gnu/man:/usr/sfw/man:/usr/local/netpbm/man:/usr/openwin/man:/usr/X11R6/man:/opt/X11/share/man:/usr/local/man:/usr/local/share/man:/usr/xpg4/man:/usr/share/man:/usr/man:/usr/ccs/man:/usr/ucb/man
+export MANPATH=${HOME}/bin/man:${HOME}/local/man:/opt/homebrew/man:/usr/gnu/man:/usr/sfw/man:/usr/local/netpbm/man:/usr/openwin/man:/usr/X11R6/man:/opt/X11/share/man:/usr/local/man:/usr/local/share/man:/usr/xpg4/man:/usr/share/man:/usr/man:/usr/ccs/man:/usr/ucb/man
 
 export EDITOR=$(whence -p vim || whence -p vi)
 export PAGER=$(whence -p less)
@@ -32,6 +32,9 @@ export GOPATH=${HOME}/golocal
 
 # rust via rustup
 test -f "${HOME}/.cargo/env" && source "${HOME}/.cargo/env"
+
+# homebrew M1
+PATH=/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}
 
 # local binaries take precedence
 PATH=${HOME}/bin:${PATH}
