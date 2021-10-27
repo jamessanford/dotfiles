@@ -3,7 +3,7 @@ set -e
 
 go install github.com/google/codesearch/cmd/...@latest
 go install golang.org/x/lint/golint@latest
-go install github.com/tobert/pcstat/pcstat@latest
+#go install github.com/tobert/pcstat/pcstat@latest
 #go install github.com/silenceshell/hcache@latest
 go install github.com/tomnomnom/gron@latest
 go install github.com/shurcooL/markdownfmt@latest
