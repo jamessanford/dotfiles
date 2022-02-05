@@ -12,7 +12,7 @@ go install github.com/maruel/panicparse@latest
 go install github.com/ChimeraCoder/gojson/gojson@latest
 go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 go install mvdan.cc/gofumpt@latest
-go install mvdan.cc/gofumpt/gofumports@latest
+#go install mvdan.cc/gofumpt/gofumports@latest
 go install github.com/yoheimuta/protolint/cmd/protolint@latest
 go install github.com/go-critic/go-critic/cmd/gocritic@latest
 go install golang.org/x/tools/cmd/goimports@latest
@@ -26,3 +26,5 @@ go install github.com/mgechev/revive@latest
 # https://github.com/sharkdp/bat
 # https://github.com/monsterxx03/gospy
 go install github.com/stern/stern@latest
+go install github.com/wader/fq@latest
+go install github.com/bufbuild/buf/cmd/buf@latest
