@@ -1,28 +1,36 @@
 #!/bin/sh -x
 set -e
 
-go install github.com/google/codesearch/cmd/...@latest
-go install golang.org/x/lint/golint@latest
-#go install github.com/tobert/pcstat/pcstat@latest
-#go install github.com/silenceshell/hcache@latest
-go install github.com/tomnomnom/gron@latest
-go install github.com/shurcooL/markdownfmt@latest
-go install github.com/FiloSottile/gorebuild@latest
-go install rsc.io/goversion@latest
-go install github.com/maruel/panicparse@latest
-go install github.com/ChimeraCoder/gojson/gojson@latest
-go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest
-go install mvdan.cc/gofumpt@latest
-go install mvdan.cc/gofumpt/gofumports@latest
-go install github.com/yoheimuta/protolint/cmd/protolint@latest
-go install github.com/go-critic/go-critic/cmd/gocritic@latest
-go install golang.org/x/tools/cmd/goimports@latest
-go install honnef.co/go/tools/cmd/staticcheck@latest
-go install github.com/mgechev/revive@latest
-#go install github.com/silenceshell/hcache@latest
+# NOTE: testing on corner
+if [ "$(hostid)" = "a8c01401" ]; then
+  export GOAMD64=v3
+fi
+
+go install -x github.com/google/codesearch/cmd/...@latest
+go install -x golang.org/x/lint/golint@latest
+#gotip install -x github.com/tobert/pcstat/pcstat@latest
+go install -x github.com/tomnomnom/gron@latest
+go install -x github.com/shurcooL/markdownfmt@latest
+go install -x github.com/FiloSottile/gorebuild@latest
+go install -x rsc.io/goversion@latest
+go install -x github.com/maruel/panicparse@latest
+go install -x github.com/ChimeraCoder/gojson/gojson@latest
+go install -x github.com/golangci/golangci-lint/cmd/golangci-lint@latest
+go install -x mvdan.cc/gofumpt@latest
+#gotip install -x mvdan.cc/gofumpt/gofumports@latest
+go install -x github.com/yoheimuta/protolint/cmd/protolint@latest
+go install -x github.com/go-critic/go-critic/cmd/gocritic@latest
+go install -x golang.org/x/tools/cmd/goimports@latest
+go install -x honnef.co/go/tools/cmd/staticcheck@latest
+go install -x github.com/mgechev/revive@latest
+#gotip install -x github.com/silenceshell/hcache@latest
 # github.com/d4l3k/go-pry
 # github.com/aclements/go-perf/cmd/memlat
 # github.com/fzipp/pythia
 # https://github.com/chneukirchen/nq
 # https://github.com/sharkdp/bat
 # https://github.com/monsterxx03/gospy
+go install -x github.com/stern/stern@latest
+go install -x github.com/wader/fq@latest
+go install -x github.com/bufbuild/buf/cmd/buf@latest
+go install -x github.com/nsf/gocode@latest

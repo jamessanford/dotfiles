@@ -3,3 +3,5 @@
 	name = James Sanford
 [pull]
 	rebase = true
+[init]
+	defaultBranch = main

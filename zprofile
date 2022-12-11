@@ -5,6 +5,11 @@ export MANPATH=${HOME}/bin/man:${HOME}/local/man:/opt/homebrew/man:/usr/gnu/man:
 export EDITOR=$(whence -p vim || whence -p vi)
 export PAGER=$(whence -p less)
 
+# colorize and format manpages with bat, if available
+if whence bat >/dev/null; then
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+fi
+
 if [ -z "${TERM}" ]; then
  export TERM=vt100
 fi
@@ -26,7 +31,9 @@ export NODE_PATH=${HOME}/local/node:${HOME}/local/node/lib/node_modules
 
 # golang.org
 PATH=${HOME}/go/bin:${HOME}/golocal/bin:${PATH}
-export GOPATH=${HOME}/golocal
+if [ -d "${HOME}/golocal" ]; then
+  export GOPATH=${HOME}/golocal
+fi
 # if golang binary distribution is in ~/go, set this:
 #export GOROOT=${HOME}/go
 

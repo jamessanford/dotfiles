@@ -9,4 +9,5 @@
 
 # TODO: --color-only
 
-GIT_PAGER="delta --syntax-theme=ansi-light --hunk-style=plain" git "$@"
+# Sadly --hunk-style=plain is gone.  Consider --color-only?
+GIT_PAGER="delta --syntax-theme=Dracula --file-decoration-style='black overline' --hunk-header-decoration-style=''" git "$@"

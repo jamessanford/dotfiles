@@ -107,6 +107,7 @@ compdef -d open
 zstyle ':completion:*' menu select
 
 # python work
+export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
 whence -p virtualenvwrapper_lazy.sh >/dev/null && source =virtualenvwrapper_lazy.sh
 
 # machine readable current git branch
@@ -137,16 +138,28 @@ alias turbosum='sudo turbostat --quiet --show Core,CPU,Avg_MHz,Busy%,Bzy_MHz,TSC
 alias yall='yay --nocleanmenu --nodiffmenu'
 
 # summary of extended iostat output
-iostatsum() { iostat -x 1|awk '/Device/{pf=1} /^$/{pf=0} (pf==1){printf("%12s%12s%12s%12s%12s%12s\n", $1, $2, $3, $8, $9, $NF)} (pf==0)' }
+iostatsum() { iostat -x 1 "$@"|awk '/Device/{pf=1} /^$/{pf=0} (pf==1){printf("%12s%12s%12s%12s%12s%12s\n", $1, $2, $3, $8, $9, $NF)} (pf==0)' }
 
 # Show something like 'screen -x', but for tmux (not just "tmux a")
 tmux() { if [[ $@ == "-x" ]]; then tmux list-sessions; echo ""; echo "Use tmux-new-session -t SESSION"; else command tmux "$@"; fi; }
+
+# Remember how markdown links are formatted.
+md-link() {
+  if [[ "$1" =~ "^http" ]]; then
+    echo "[text here]($1)"
+  elif [ $# -gt 0 ]; then
+    echo "[text here](https://$1)"
+  else
+    echo "[text here](https://example.com/)"
+  fi
+}
 
 kubectl() {
   unfunction kubectl
   source <(kubectl completion zsh)
   kubectl "$@"
 }
+
 # export KUBECONFIG=$(k3d get kubeconfig --name=k3s-default)
 kubeact() {
   local _name='k3s-default'

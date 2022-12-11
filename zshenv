@@ -24,4 +24,3 @@ if [ ! -z "${SSH_CONNECTION}" ]; then
   unset _t
   unset _ip
 fi
-if [ -e /Users/jsanford/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jsanford/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
