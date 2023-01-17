@@ -6,7 +6,8 @@ if [ "$(hostid)" = "a8c01401" ]; then
   export GOAMD64=v3
 fi
 
-go install -x github.com/google/codesearch/cmd/...@latest
+# NOTE: See local version
+#go install -x github.com/google/codesearch/cmd/...@latest
 go install -x golang.org/x/lint/golint@latest
 #gotip install -x github.com/tobert/pcstat/pcstat@latest
 go install -x github.com/tomnomnom/gron@latest
