@@ -20,6 +20,9 @@ fi
 
 export BLOCKSIZE=1024
 
+# homebrew M1
+PATH=/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}
+
 # osx android-sdk
 if [ "$(uname -s 2>/dev/null)" = "Darwin" ]; then
   PATH=${PATH}:/Volumes/android/android-sdk/platform-tools:/Volumes/android/android-sdk/tools
@@ -39,9 +42,6 @@ fi
 
 # rust via rustup
 test -f "${HOME}/.cargo/env" && source "${HOME}/.cargo/env"
-
-# homebrew M1
-PATH=/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}
 
 # local binaries take precedence
 PATH=${HOME}/bin:${PATH}
