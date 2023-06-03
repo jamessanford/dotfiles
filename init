@@ -19,7 +19,7 @@ if [ "${DOTFILES}" = "." ]; then
 fi
 
 # do not symlink these filenames
-IGNORE="(README|init|init-deps|nocommand|kitty.conf|git-delta|golangci.example.yml|revive.config.toml)"
+IGNORE="(README|init|init-deps|nocommand|kitty.conf|xremap.yaml|git-delta|golangci.example.yml|revive.config.toml)"
 
 if [ -z "${HOME}" ] || [ ! -d "${HOME}" ]; then
   echo 'invalid $HOME'

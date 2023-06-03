@@ -1,0 +1,40 @@
+# xremap.yaml
+#
+# Fix shift-enter (shift-return) on Linux
+# Make Super-... work like MacOS
+#
+# sleep 1;xremap-x11 xremap.yaml
+#
+
+keymap:
+  - name: disable shift-enter
+    remap:
+      SHIFT-KEY_ENTER: KEY_ENTER
+
+  - name: Terminal MacOS-like
+    application:
+      only: konsole.konsole
+    remap:
+      Super-c: C-shift-c
+      Super-x: C-shift-x
+      Super-v: C-shift-v
+      Super-w: C-shift-w
+      Super-t: C-shift-t
+      Super-n: C-shift-n
+
+  - name: Browser MacOS-like
+    application:
+      only: Navigator.firefox
+    remap:
+      Super-x: C-x
+      Super-c: C-c
+      Super-v: C-v
+      Super-a: C-a
+      Super-z: C-z
+      Super-s: C-s
+      Super-p: C-p
+      Super-q: C-q
+      Super-n: C-n
+      Super-w: C-w
+      Super-t: C-t
+      Super-l: C-l
