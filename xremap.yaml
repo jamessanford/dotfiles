@@ -24,7 +24,7 @@ keymap:
 
   - name: Browser MacOS-like
     application:
-      only: Navigator.firefox
+      only: [Navigator.firefox, chromium.Chromium]
     remap:
       Super-x: C-x
       Super-c: C-c
