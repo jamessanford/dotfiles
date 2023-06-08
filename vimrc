@@ -11,7 +11,6 @@ set ruler
 set history=5000
 set undolevels=5000
 set nomodeline
-set viminfo=
 set cpo+=v$
 
 set bg=light

@@ -1,6 +1,6 @@
 PATH=${HOME}/bin:${HOME}/local/bin:/usr/gnu/bin:/usr/sfw/bin:/usr/local/bin:/usr/X11R6/bin:/usr/openwin/bin:/usr/local/mysql/bin:/usr/local/netpbm/bin:/usr/bin/vendor_perl:/usr/xpg4/bin:/usr/ccs/bin:/usr/bin:/bin:/usr/etc:/etc:/usr/local/sbin:/sbin:/usr/sbin:/usr/ucb
 
-export MANPATH=${HOME}/bin/man:${HOME}/local/man:/opt/homebrew/man:/usr/gnu/man:/usr/sfw/man:/usr/local/netpbm/man:/usr/openwin/man:/usr/X11R6/man:/opt/X11/share/man:/usr/local/man:/usr/local/share/man:/usr/xpg4/man:/usr/share/man:/usr/man:/usr/ccs/man:/usr/ucb/man
+export MANPATH=${HOME}/bin/man:${HOME}/local/man:/usr/gnu/man:/usr/sfw/man:/usr/local/netpbm/man:/usr/openwin/man:/usr/X11R6/man:/opt/X11/share/man:/usr/local/man:/usr/local/share/man:/usr/xpg4/man:/usr/share/man:/usr/man:/usr/ccs/man:/usr/ucb/man
 
 export EDITOR=$(whence -p vim || whence -p vi)
 export PAGER=$(whence -p less)
@@ -14,14 +14,7 @@ if [ -z "${TERM}" ]; then
  export TERM=vt100
 fi
 
-if [ "${TERM}" = "xterm-kitty" ] && [ -z "${TERMINFO}" ]; then
-  export TERM=xterm-256color
-fi
-
 export BLOCKSIZE=1024
-
-# homebrew M1
-PATH=/opt/homebrew/bin:/opt/homebrew/sbin:${PATH}
 
 # osx android-sdk
 if [ "$(uname -s 2>/dev/null)" = "Darwin" ]; then
@@ -60,6 +53,3 @@ export LESSHISTFILE=-
 _locale_config=/etc/profile.d/locale.sh
 test -f ${_locale_config} && source ${_locale_config}
 unset _locale_config
-
-# python poetry
-export PATH="/Users/jsanford/Library/Python/3.9/bin:$PATH"
