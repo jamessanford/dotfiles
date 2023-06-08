@@ -168,5 +168,5 @@ kubeact() {
 }
 
 # macOS kitty workarounds (alternatively, pass terminfo)
-alias ssh='TERM=xterm ssh'
+alias ssh='TERM=xterm-256color ssh'
 alias sudo='TERM=xterm sudo'
