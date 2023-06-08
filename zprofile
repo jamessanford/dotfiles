@@ -14,10 +14,6 @@ if [ -z "${TERM}" ]; then
  export TERM=vt100
 fi
 
-if [ "${TERM}" = "xterm-kitty" ] && [ -z "${TERMINFO}" ]; then
-  export TERM=xterm-256color
-fi
-
 export BLOCKSIZE=1024
 
 # osx android-sdk
