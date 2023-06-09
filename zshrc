@@ -7,7 +7,7 @@ fpath=(~/.zsh/functions $fpath)
 
 umask 077
 
-alias ls='ls -NF'
+alias ls='ls -F'
 
 alias trn='trn -q'
 
@@ -107,6 +107,7 @@ compdef -d open
 zstyle ':completion:*' menu select
 
 # python work
+export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
 whence -p virtualenvwrapper_lazy.sh >/dev/null && source =virtualenvwrapper_lazy.sh
 
 # machine readable current git branch
@@ -165,3 +166,7 @@ kubeact() {
   if [[ $# -gt 0 ]]; then _name="$1"; fi
   export KUBECONFIG=$(k3d get kubeconfig "${_name}")
 }
+
+# macOS kitty workarounds (alternatively, pass terminfo)
+alias ssh='TERM=xterm-256color ssh'
+alias sudo='TERM=xterm sudo'
