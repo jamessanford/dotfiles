@@ -7,7 +7,30 @@
 #   git delta diff ...
 #   git delta show ...
 
-# TODO: --color-only
+# TODO: "empty-line" should show a single inverse character to indicate something being changed
+# TODO: hunk-header should add a newline after the header (for the "context" of the hunk)
+#       (hunk-label-suffix @@)
+#
+#  --file-transformation='s/^/TEST /' \
+#  --whitespace-error-style='red reverse' \
 
-# Sadly --hunk-style=plain is gone.  Consider --color-only?
-GIT_PAGER="delta --syntax-theme=Dracula --file-decoration-style='black overline' --hunk-header-decoration-style=''" git "$@"
+GIT_PAGER="delta \
+  --commit-decoration-style='blue' \
+  --commit-style='raw' \
+  --file-decoration-style='black overline' \
+  --file-style='blue' \
+  --file-added-label='diff add' \
+  --file-copied-label='diff cp' \
+  --file-modified-label='diff' \
+  --file-removed-label='diff rm' \
+  --file-renamed-label='diff mv' \
+  --hunk-label='@@' \
+  --hunk-header-decoration-style='' \
+  --hunk-header-file-style='purple' \
+  --hunk-header-line-number-style='purple' \
+  --hunk-header-style='file line-number syntax' \
+  --minus-style='red' \
+  --minus-empty-line-marker-style='red reverse' \
+  --plus-style='green' \
+  --plus-empty-line-marker-style='green reverse' \
+" git "$@"
