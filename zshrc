@@ -133,9 +133,6 @@ alias godoc='go doc --all'
 # see also turbostat --list
 alias turbosum='sudo turbostat --quiet --show Core,CPU,Avg_MHz,Busy%,Bzy_MHz,TSC_MHz,CorWatt,PkgWatt,RAMWatt,GFXMHz --interval 1'
 
-# arch
-alias yall='yay --nocleanmenu --nodiffmenu'
-
 # summary of extended iostat output
 iostatsum() { iostat -x 1 "$@"|awk '/Device/{pf=1} /^$/{pf=0} (pf==1){printf("%12s%12s%12s%12s%12s%12s\n", $1, $2, $3, $8, $9, $NF)} (pf==0)' }
 
