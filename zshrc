@@ -165,3 +165,12 @@ kubeact() {
   if [[ $# -gt 0 ]]; then _name="$1"; fi
   export KUBECONFIG=$(k3d get kubeconfig "${_name}")
 }
+
+# colorize and format manpages with bat, if available
+man() {
+  if whence bat >/dev/null; then
+    MANROFFOPT="-c" MANPAGER="sh -c 'col -bx | bat -l man -p'" command man "$@"
+  else
+    command man "$@"
+  fi
+}

@@ -5,11 +5,6 @@ export MANPATH=${HOME}/bin/man:${HOME}/local/man:/usr/gnu/man:/usr/sfw/man:/usr/
 export EDITOR=$(whence -p vim || whence -p vi)
 export PAGER=$(whence -p less)
 
-# colorize and format manpages with bat, if available
-if whence bat >/dev/null; then
-  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-fi
-
 if [ -z "${TERM}" ]; then
  export TERM=vt100
 fi
