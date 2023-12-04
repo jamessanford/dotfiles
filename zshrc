@@ -168,5 +168,16 @@ kubeact() {
 }
 
 # macOS kitty workarounds (alternatively, pass terminfo)
-alias ssh='TERM=xterm-256color ssh'
+ssh() {
+  if [[ $# -gt 0 && "$1" == "corner" ]]; then
+    command ssh "$@"
+  else
+    TERM=xterm-256color command ssh "$@"
+  fi
+}
+
+#alias ssh='TERM=xterm-256color ssh'
 alias sudo='TERM=xterm sudo'
+
+# lunar?
+export PATH="$PATH:$HOME/.local/bin"
