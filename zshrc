@@ -171,3 +171,9 @@ man() {
     command man "$@"
   fi
 }
+
+# "gitdir log /path/to/some/file.txt"
+gitdir() {
+  local _dir=$(dirname -- "${@: -1}")
+  (cd -- "${_dir}" && git "$@")
+}
