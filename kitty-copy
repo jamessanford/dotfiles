@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ "$#" -eq 0 ]; then
+  kitten clipboard /dev/stdin
+else
+  kitten clipboard "$@"
+fi
