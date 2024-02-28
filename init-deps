@@ -37,3 +37,4 @@ go install -x github.com/bufbuild/buf/cmd/buf@latest
 go install -x github.com/nsf/gocode@latest
 go install -x golang.org/x/vuln/cmd/govulncheck@latest
 go install -x github.com/yonahd/kor@latest
+go install -x github.com/psanford/wormhole-william@latest
