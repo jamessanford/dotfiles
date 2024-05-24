@@ -38,3 +38,5 @@ go install -x github.com/nsf/gocode@latest
 go install -x golang.org/x/vuln/cmd/govulncheck@latest
 go install -x github.com/yonahd/kor@latest
 go install -x github.com/psanford/wormhole-william@latest
+go install -x github.com/kisielk/godepgraph@latest
+go install -x github.com/Zxilly/go-size-analyzer/cmd/gsa@latest
