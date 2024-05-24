@@ -33,7 +33,7 @@ if [ $# -gt 0 ]; then
 fi
 
 for file in *; do
-  if ! (echo "${file}" | egrep -x -q "${IGNORE}") && [ -f "${file}" ]; then
+  if ! (echo "${file}" | grep -E -x -q "${IGNORE}") && [ -f "${file}" ]; then
     dest="${HOME}/.${file}"
 
     # Skip and warn if there is something there already.
