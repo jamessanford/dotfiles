@@ -106,29 +106,10 @@ compdef -d open
 # Try menu completion instead of a list?  I think I like it.
 zstyle ':completion:*' menu select
 
-# python: move away from virtualenvwrapper
-avoid_virtualenvwrapper() {
-  cat <<__END
-  Use pyenv ("pyenv virtualenv 3.12 myenv", "shell myenv" or "local myenv")
-  Or  pyenv with "uv"
-__END
-  return 1
-}
-
-workon() {
-  if [[ "$@" == "" ]]; then
-    avoid_virtualenvwrapper
-  else
-    unfunction workon
-    export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
-    source =virtualenvwrapper.sh
-    workon "$@"
-  fi
-}
-
-mkvirtualenv() {
-  avoid_virtualenvwrapper
-}
+# python: macOS continue with virtualenvwrapper for now, since homebrew has individual versions installed
+export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
+whence -p virtualenvwrapper_lazy.sh >/dev/null && source =virtualenvwrapper_laz
+y.sh
 
 # Lazy load pyenv, but this is a terrible idea, as it removes the magic.
 pyenv() {
