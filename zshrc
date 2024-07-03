@@ -108,8 +108,7 @@ zstyle ':completion:*' menu select
 
 # python: macOS continue with virtualenvwrapper for now, since homebrew has individual versions installed
 export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
-whence -p virtualenvwrapper_lazy.sh >/dev/null && source =virtualenvwrapper_laz
-y.sh
+whence -p virtualenvwrapper_lazy.sh >/dev/null && source =virtualenvwrapper_lazy.sh
 
 # Lazy load pyenv, but this is a terrible idea, as it removes the magic.
 pyenv() {
