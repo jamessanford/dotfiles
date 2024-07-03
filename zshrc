@@ -106,9 +106,38 @@ compdef -d open
 # Try menu completion instead of a list?  I think I like it.
 zstyle ':completion:*' menu select
 
-# python work
-export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
-whence -p virtualenvwrapper_lazy.sh >/dev/null && source =virtualenvwrapper_lazy.sh
+# python: move away from virtualenvwrapper
+avoid_virtualenvwrapper() {
+  cat <<__END
+  Use pyenv ("pyenv virtualenv 3.12 myenv", "shell myenv" or "local myenv")
+  Or  pyenv with "uv"
+__END
+  return 1
+}
+
+workon() {
+  if [[ "$@" == "" ]]; then
+    avoid_virtualenvwrapper
+  else
+    unfunction workon
+    export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
+    source =virtualenvwrapper.sh
+    workon "$@"
+  fi
+}
+
+mkvirtualenv() {
+  avoid_virtualenvwrapper
+}
+
+# Lazy load pyenv, but this is a terrible idea, as it removes the magic.
+pyenv() {
+  unfunction pyenv
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+  pyenv "$@"
+}
 
 # machine readable current git branch
 alias git-current-branch='git rev-parse --abbrev-ref HEAD'
@@ -134,14 +163,11 @@ alias godoc='go doc --all'
 # see also turbostat --list
 alias turbosum='sudo turbostat --quiet --show Core,CPU,Avg_MHz,Busy%,Bzy_MHz,TSC_MHz,CorWatt,PkgWatt,RAMWatt,GFXMHz --interval 1'
 
-# arch
-alias yall='yay --nocleanmenu --nodiffmenu'
-
 # summary of extended iostat output
 iostatsum() { iostat -x 1 "$@"|awk '/Device/{pf=1} /^$/{pf=0} (pf==1){printf("%12s%12s%12s%12s%12s%12s\n", $1, $2, $3, $8, $9, $NF)} (pf==0)' }
 
 # Show something like 'screen -x', but for tmux (not just "tmux a")
-tmux() { if [[ $@ == "-x" ]]; then tmux list-sessions; echo ""; echo "Use tmux-new-session -t SESSION"; else command tmux "$@"; fi; }
+tmux() { if [[ "$@" == "-x" ]]; then tmux list-sessions; echo ""; echo "Use tmux-new-session -t SESSION"; else command tmux "$@"; fi; }
 
 # Remember how markdown links are formatted.
 md-link() {
@@ -181,3 +207,18 @@ alias sudo='TERM=xterm sudo'
 
 # lunar?
 export PATH="$PATH:$HOME/.local/bin"
+
+# colorize and format manpages with bat, if available
+man() {
+  if whence bat >/dev/null; then
+    MANROFFOPT="-c" MANPAGER="sh -c 'col -bx | bat -l man -p'" command man "$@"
+  else
+    command man "$@"
+  fi
+}
+
+# "gitdir log /path/to/some/file.txt"
+gitdir() {
+  local _dir=$(dirname -- "${@: -1}")
+  (cd -- "${_dir}" && git "$@")
+}

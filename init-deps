@@ -35,3 +35,9 @@ go install -x github.com/stern/stern@latest
 go install -x github.com/wader/fq@latest
 go install -x github.com/bufbuild/buf/cmd/buf@latest
 go install -x github.com/nsf/gocode@latest
+go install -x golang.org/x/vuln/cmd/govulncheck@latest
+go install -x github.com/yonahd/kor@latest
+go install -x github.com/psanford/wormhole-william@latest
+go install -x github.com/kisielk/godepgraph@latest
+go install -x github.com/Zxilly/go-size-analyzer/cmd/gsa@latest
+go install -x github.com/go-shiori/shiori@latest
