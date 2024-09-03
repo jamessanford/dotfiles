@@ -120,6 +120,8 @@ avoid_virtualenvwrapper() {
   cat <<__END
   Use pyenv ("pyenv virtualenv 3.12 myenv", "shell myenv" or "local myenv")
   Or  pyenv with "uv"
+
+  May need to git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 __END
   return 1
 }
