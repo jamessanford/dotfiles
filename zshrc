@@ -84,6 +84,15 @@ bindkey '^F' history-incremental-search-forward
 # default is vi-backward-kill-word, but this appears to be a-z0-9 words.
 bindkey '^W' backward-kill-word
 
+# replicate readline unix-filename-rubout
+unix_filename_rubout() {
+  # TODO: Unfortunately this removes the trailing slash.
+  LBUFFER=${LBUFFER%/*}
+}
+zle -N unix_filename_rubout
+# also consider ^X^W
+bindkey '^O' unix_filename_rubout
+
 stty susp $(print '\C-z')
 
 btih(){local _h;for _h in "$@"; do echo "magnet:?xt=urn:btih:${_h}"; done}
