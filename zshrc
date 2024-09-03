@@ -190,6 +190,9 @@ md-link() {
   fi
 }
 
+# aws-cli-v2
+test -f /usr/bin/aws_zsh_completer.sh && source /usr/bin/aws_zsh_completer.sh
+
 kubectl() {
   unfunction kubectl
   source <(kubectl completion zsh)
