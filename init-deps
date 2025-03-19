@@ -9,7 +9,7 @@ fi
 # NOTE: See local version
 #go install -x github.com/google/codesearch/cmd/...@latest
 go install -x golang.org/x/lint/golint@latest
-#gotip install -x github.com/tobert/pcstat/pcstat@latest
+go install -x github.com/tobert/pcstat@latest
 go install -x github.com/tomnomnom/gron@latest
 go install -x github.com/shurcooL/markdownfmt@latest
 go install -x github.com/FiloSottile/gorebuild@latest
@@ -41,3 +41,6 @@ go install -x github.com/psanford/wormhole-william@latest
 go install -x github.com/kisielk/godepgraph@latest
 go install -x github.com/Zxilly/go-size-analyzer/cmd/gsa@latest
 go install -x github.com/go-shiori/shiori@latest
+go install -x github.com/avitaltamir/cyphernetes/cmd/cyphernetes@latest
+go install -x github.com/homeport/dyff/cmd/dyff@latest
+go install -x github.com/znscli/zns@latest

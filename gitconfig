@@ -2,7 +2,7 @@
 	email = jsanfordgit@froop.com
 	name = James Sanford
 [pull]
-	rebase = true
+	ff = only
 [init]
 	defaultBranch = main
 [filter "lfs"]
