@@ -31,6 +31,9 @@ fi
 # rust via rustup
 test -f "${HOME}/.cargo/env" && source "${HOME}/.cargo/env"
 
+# uv python
+PATH="${HOME}/.local/bin:${PATH}"
+
 # local binaries take precedence
 PATH=${HOME}/bin:${PATH}
 
