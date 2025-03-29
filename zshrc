@@ -84,6 +84,15 @@ bindkey '^F' history-incremental-search-forward
 # default is vi-backward-kill-word, but this appears to be a-z0-9 words.
 bindkey '^W' backward-kill-word
 
+# replicate readline unix-filename-rubout
+unix_filename_rubout() {
+  # TODO: Unfortunately this removes the trailing slash.
+  LBUFFER=${LBUFFER%/*}
+}
+zle -N unix_filename_rubout
+# also consider ^X^W
+bindkey '^O' unix_filename_rubout
+
 stty susp $(print '\C-z')
 
 btih(){local _h;for _h in "$@"; do echo "magnet:?xt=urn:btih:${_h}"; done}
@@ -109,6 +118,16 @@ zstyle ':completion:*' menu select
 # python: macOS continue with virtualenvwrapper for now, since homebrew has individual versions installed
 export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
 whence -p virtualenvwrapper_lazy.sh >/dev/null && source =virtualenvwrapper_lazy.sh
+
+# uvsh is something like "pyenv activate" but for uv
+# Consider making this the new "workon"?
+uvsh() {
+  local _f=.venv/bin/activate
+  if [[ $# -gt 0 ]]; then
+    _f=~/.local/share/uv/venv/"$1"/bin/activate
+  fi
+  source "$_f"
+}
 
 # Lazy load pyenv, but this is a terrible idea, as it removes the magic.
 pyenv() {
@@ -159,6 +178,9 @@ md-link() {
     echo "[text here](https://example.com/)"
   fi
 }
+
+# aws-cli-v2
+test -f /usr/bin/aws_zsh_completer.sh && source /usr/bin/aws_zsh_completer.sh
 
 kubectl() {
   unfunction kubectl
