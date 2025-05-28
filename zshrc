@@ -140,9 +140,9 @@ mkvirtualenv() {
   avoid_virtualenvwrapper
 }
 
-# uvsh is something like "pyenv activate" but for uv
+# venv is something like "pyenv activate" but for uv
 # Consider making this the new "workon"?
-uvsh() {
+venv() {
   local _f=.venv/bin/activate
   if [[ $# -gt 0 ]]; then
     _f=~/.local/share/uv/venv/"$1"/bin/activate
