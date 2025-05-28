@@ -119,7 +119,7 @@ zstyle ':completion:*' menu select
 export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
 whence -p virtualenvwrapper_lazy.sh >/dev/null && source =virtualenvwrapper_lazy.sh
 
-# uvsh is something like "pyenv activate" but for uv
+# venv is something like "pyenv activate" but for uv
 # Consider making this the new "workon"?
 venv() {
   local _f=.venv/bin/activate
