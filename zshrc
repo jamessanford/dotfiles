@@ -43,7 +43,9 @@ unset RPROMPT
 unset LESS
 
 # non-zero exit status causes prompt prefix
-PROMPT='%(?..%F{red}[%?]%f )%m%(?.%#.!) '
+PROMPT='%(?..[%?] )%m%(?.%#.!) '
+# if you want color for the exit status:
+#PROMPT='%(?..%F{red}[%?]%f )%m%(?.%#.!) '
 
 unset MAILCHECK
 unset HISTFILE
