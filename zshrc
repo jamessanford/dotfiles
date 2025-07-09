@@ -117,7 +117,7 @@ compdef -d open
 # Try menu completion instead of a list?  I think I like it.
 zstyle ':completion:*' menu select
 
-# python: macOS continue with virtualenvwrapper for now, since homebrew has individual versions installed
+# python: macOS allow virtualenvwrapper until moved to uv
 export VIRTUALENVWRAPPER_PYTHON=/opt/homebrew/bin/python3
 whence -p virtualenvwrapper_lazy.sh >/dev/null && source =virtualenvwrapper_lazy.sh
 
@@ -208,9 +208,6 @@ ssh() {
 
 #alias ssh='TERM=xterm-256color ssh'
 alias sudo='TERM=xterm sudo'
-
-# lunar?
-export PATH="$PATH:$HOME/.local/bin"
 
 # colorize and format manpages with bat, if available
 man() {
