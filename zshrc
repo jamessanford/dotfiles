@@ -43,7 +43,7 @@ unset RPROMPT
 unset LESS
 
 # non-zero exit status causes prompt prefix
-PROMPT='%(?..[%?] )%m%(?.%#.!) '
+PROMPT='%(?..%F{red}[%?]%f )%m%(?.%#.!) '
 
 unset MAILCHECK
 unset HISTFILE
