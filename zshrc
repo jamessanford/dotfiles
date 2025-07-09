@@ -57,7 +57,7 @@ setopt \
   zle magicequalsubst monitor alwayslastprompt alwaystoend \
   autopushd autolist automenu autoremoveslash \
   chaselinks extendedglob hashcmds hashdirs hashlistall \
-  extendedhistory longlistjobs nobadpattern nobeep \
+  extendedhistory interactivecomments longlistjobs nobadpattern nobeep \
   noflowcontrol nohup nonomatch pushdignoredups pushdminus \
   pushdsilent pushdtohome rcquotes rmstarsilent shwordsplit \
   incappendhistory nobgnice
@@ -69,7 +69,7 @@ unsetopt \
   cshjunkiequotes cshnullglob globsubst \
   errexit globcomplete globdots histignorespace histignoredups \
   histnostore histverify ignorebraces ignoreeof \
-  interactivecomments kshoptionprint listambiguous \
+  kshoptionprint listambiguous \
   listtypes mailwarning markdirs nobanghist noequals noglob \
   nopromptcr norcs noshortloops nounset nullglob numericglobsort \
   overstrike pathdirs printexitvalue promptsubst rcexpandparam \
