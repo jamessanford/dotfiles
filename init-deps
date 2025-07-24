@@ -14,7 +14,7 @@ go install -x github.com/tomnomnom/gron@latest
 go install -x github.com/shurcooL/markdownfmt@latest
 go install -x github.com/FiloSottile/gorebuild@latest
 go install -x rsc.io/goversion@latest
-go install -x github.com/maruel/panicparse@latest
+go install -x github.com/maruel/panicparse/v2@latest
 go install -x github.com/ChimeraCoder/gojson/gojson@latest
 go install -x github.com/golangci/golangci-lint/cmd/golangci-lint@latest
 go install -x mvdan.cc/gofumpt@latest
@@ -44,3 +44,4 @@ go install -x github.com/go-shiori/shiori@latest
 go install -x github.com/avitaltamir/cyphernetes/cmd/cyphernetes@latest
 go install -x github.com/homeport/dyff/cmd/dyff@latest
 go install -x github.com/znscli/zns@latest
+go install -x github.com/google/gops@latest
