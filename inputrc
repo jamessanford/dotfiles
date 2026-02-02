@@ -1,0 +1,9 @@
+# Use LSCOLORS when tab-completing.
+set colored-stats on
+
+# List the possibilities on the first tab, i.e. don’t require a second one.
+set show-all-if-ambiguous on
+
+# Use ^O to delete a filename component (usually means until the next slash) to
+# the left.
+Control-o: unix-filename-rubout
