@@ -223,3 +223,9 @@ gitdir() {
   local _dir=$(dirname -- "${@: -1}")
   (cd -- "${_dir}" && git "$@")
 }
+
+# Update direct imports in go.mod to latest version
+go-update-imports() {
+  go list -m -f '{{if and (not .Indirect) (not .Main)}}{{.Path}}{{end}}' all | xargs --no-run-if-empty go get
+  go mod tidy
+}
