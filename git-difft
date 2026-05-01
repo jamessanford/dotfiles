@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# difft
+# https://github.com/Wilfred/difftastic
+
+GIT_EXTERNAL_DIFF=difft git "$@"
