@@ -50,3 +50,4 @@ go install -x github.com/bronze1man/yaml2json@latest
 go install -x github.com/go-delve/delve/cmd/dlv@latest
 go install -x google.golang.org/grpc/cmd/protoc-gen-go-grpc@latest
 go install -x github.com/kubecolor/kubecolor@latest
+go install -x github.com/jamessanford/gover@latest
